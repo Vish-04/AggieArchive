@@ -4,7 +4,7 @@ import './App.css'
 import {RecoilRoot} from "recoil";
 import LoginForm from "./Login/loginForm"
 import SignupForm from "./Login/signupForm";
-
+import ProfilePage from './Profile/profilePage';
 
 function App() {
 
@@ -16,6 +16,7 @@ function App() {
         <Routes>
           <Route path="login"  element={<LoginForm />} />
           <Route path="signup" element={<SignupForm />} />
+          <Route path="profile" element={<ProfilePage />} />
         </Routes>
       </Router>
     </RecoilRoot>
