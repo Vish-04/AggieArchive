@@ -21,3 +21,7 @@ connection.once('open', ()=>{
 const usersRouter = require("./Routes/Users.cjs");
 
 app.use('/users', usersRouter);
+
+const coursesRouter = require("./Routes/Courses.cjs");
+
+app.use('/courses', coursesRouter);
