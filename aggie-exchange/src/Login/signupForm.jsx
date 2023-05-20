@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../css/loginForm.css";
 import { Link } from 'react-router-dom';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import { createUser } from "./login";
+
 
 const SignupForm = () => {
     const [username, setUsername] = useState("");
@@ -11,7 +13,12 @@ const SignupForm = () => {
     const [success, setSuccess] = useState(false);
 
     const handleCreateAccount = async() =>{
-        console.log("IN")
+        const result = await createUser(username, password, confirmPassword)
+        setError(result)
+        if (!result.value){
+            setSuccess(true)
+            window.location.href = "/login"
+        }
     }
 
   return (
