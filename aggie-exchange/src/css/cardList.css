@@ -28,7 +28,8 @@
 
   .card {
     border: 1px solid #000000;
-    background-color: #0060ac;
+    background-color: #52a8ef;
+    color: white;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
@@ -43,7 +44,7 @@
   }
   
   .card:hover {
-    background-color: #2596be;;
+    background-color: #6ac9eb;;
     box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
     transition: ease-out 0.2s;
     border-radius: 20px;

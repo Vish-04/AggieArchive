@@ -3,6 +3,11 @@
     box-sizing: border-box;
   }
 
+  @font-face {
+    font-family: 'Aloja-Light';
+    src: url('../assets/Aloja-Light.woff');
+}
+
 .nav {
     margin-bottom: 0px;
     background: linear-gradient(#0060ac, #0064b5);
@@ -32,4 +37,8 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+
+.aggiearchive{
+    font-family: 'Aloja-Light';
 }

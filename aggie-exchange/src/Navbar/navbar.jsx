@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav
       className="nav"
     >
-      <a href="/" className="site-title"><h4 style={{margin:'15px'}}>AggieArchive</h4></a>
+      <a href="/" className="site-title"><h4 className="aggiearchive">AggieArchive</h4></a>
     </nav>
     {!sessionObject ? (
       <div style={styles.loginButtons}>

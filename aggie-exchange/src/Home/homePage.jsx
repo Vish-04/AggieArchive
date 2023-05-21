@@ -20,6 +20,7 @@ const HomePage = () => {
 
   const sessionObject = localStorage.getItem('sessionObject');
 
+
   const handleSearch = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
@@ -54,7 +55,7 @@ const HomePage = () => {
         <>
             {/* <Navbar /> */}
             
-              {sessionObject != null ?
+              {!sessionStorage.getItem('sessionObject') ?
               <div style={styles.loginButtons}>
               <Link style={{textDecoration:'none'}} to="/login"><div className='loginbutton'>Login</div></Link>
                 <Link style={{textDecoration:'none'}} to="/signup"><div className='signupbutton'>Signup</div></Link>
@@ -90,15 +91,15 @@ const HomePage = () => {
             <div style={{display: 'flex', flexDirection:'row', width: '80%', height: 'auto', justifyContent: 'center', backgroundColor: 'transparent'}}>
               <div>
                 <div style={{backgroundImage: `url(${ExploreClasses})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', width:'35vw', height:'50vh', backgroundColor: 'transparent'}}></div>
-                <h1 style={{textAlign: 'center'}}>EXPLORE CLASSES</h1>
+                <h1 className="action-text" style={{textAlign: 'center'}}>EXPLORE CLASSES</h1>
               </div>
               <div>
                 <div style={{backgroundImage: `url(${DownloadResource})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', width:'35vw', height:'50vh', backgroundColor: 'transparent'}}></div>
-                <h1 style={{textAlign: 'center'}}>DOWNLOAD RESOURCES</h1>
+                <h1 className="action-text" style={{textAlign: 'center'}}>DOWNLOAD RESOURCES</h1>
               </div>
               <div>
                 <div style={{backgroundImage: `url(${StudySmart})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', width:'35vw', height:'50vh', backgroundColor: 'transparent'}}></div>
-                <h1 style={{textAlign: 'center'}}>STUDY SMART</h1>
+                <h1 className="action-text" style={{textAlign: 'center'}}>STUDY SMART</h1>
               </div>
             
             </div>
