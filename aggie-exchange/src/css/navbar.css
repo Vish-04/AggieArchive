@@ -3,7 +3,7 @@
     box-sizing: border-box;
   }
 
-  @font-face {
+@font-face {
     font-family: 'Aloja-Light';
     src: url('../assets/Aloja-Light.woff');
 }
@@ -29,6 +29,7 @@
 
 .site-title {
     font-size: 2rem;
+    font-family: 'Aloja-Light';
     margin-left: 10px;
     text-decoration: none;
     color: white;

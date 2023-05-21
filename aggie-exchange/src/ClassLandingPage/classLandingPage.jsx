@@ -141,7 +141,7 @@ const ClassLandingPage = () => {
       </div>
       {resources? <ResourceList resources={resources} /> : <h3>There are no resources. Want to add one?</h3>}
       {discussions? <DiscussionList discussions={discussions} /> : <h3>There are no discussions. Want to add one?</h3>}
-      <textarea
+      <textarea 
             value={descriptionValue}
             className="popup-input"
             onChange={(event) => {
@@ -159,7 +159,7 @@ const ClassLandingPage = () => {
               Added Post Successfully!
             </p>
           ) : null}
-          <button onClick={handleCreatePost}>POST</button>
+          <button className="add-post" onClick={handleCreatePost}>POST</button>
       <button className="add-resource-button" onClick={() => setButtonPopup(!buttonPopup)}>
         Add Resource 
       </button>
