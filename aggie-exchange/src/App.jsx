@@ -38,7 +38,7 @@ function App() {
     setTimeout(() => {
       setIsLoading(false);
       console.log("LOADING")
-    }, 2000); // Set an appropriate time to show the loading screen
+    }, 700); // Set an appropriate time to show the loading screen
   }, []);
 
   return (

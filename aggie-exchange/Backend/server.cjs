@@ -30,6 +30,10 @@ const resourcesRouter = require("./Routes/Resources.cjs");
 
 app.use('/resources', resourcesRouter);
 
+const discussionsRouter = require("./Routes/Discussions.cjs");
+
+app.use('/discussions', discussionsRouter);
+
 app.listen(port, ()=>{
     console.log("Server is running on port:", port)
 });
