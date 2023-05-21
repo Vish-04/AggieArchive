@@ -141,13 +141,14 @@ const ClassLandingPage = () => {
       </div>
       {resources? <ResourceList resources={resources} /> : <h3>There are no resources. Want to add one?</h3>}
       {discussions? <DiscussionList discussions={discussions} /> : <h3>There are no discussions. Want to add one?</h3>}
-      <textarea 
+      <textarea style={{padding: '30px', borderRadius: '10px'}}
             value={descriptionValue}
             className="popup-input"
             onChange={(event) => {
               setDescriptionValue(event.target.value);
             }}
             placeholder="Enter post"
+
           />
           {error ? (
             <p style={{ color: 'red', fontSize: 16, textAlign: 'center' }}>
