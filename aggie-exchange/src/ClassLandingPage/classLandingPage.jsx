@@ -5,6 +5,7 @@ import Popup from './resourcepopup'; // Import the Popup component
 import Navbar from '../Navbar/navbar';
 import ResourceList from './resourceList';
 import Cow from "../imgs/Cow.png"
+import Footer from "../Footer/footer"
 
 
 const ClassLandingPage = () => {
@@ -92,6 +93,7 @@ const ClassLandingPage = () => {
         <h3></h3>
         
       </Popup>
+      <Footer />
     </div>
   );
 };
