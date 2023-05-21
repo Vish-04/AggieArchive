@@ -4,6 +4,7 @@ import '../css/classLanding.css';
 import Popup from './resourcepopup'; // Import the Popup component
 import Navbar from '../Navbar/navbar';
 import ResourceList from './resourceList';
+import Cow from "../imgs/Cow.png"
 
 
 const ClassLandingPage = () => {
@@ -65,12 +66,20 @@ const ClassLandingPage = () => {
   return (
     <div className="container">
       <Navbar />
-      <div style={{textAlign: 'left', backgroundColor: 'aliceblue', marginTop: '100px', padding: '20px'}}>
-        <h1 className="heading">{courseID} {courseName} {courseUnits}</h1>
-        <p className='heading-text'>Course Description: {courseDescription}</p>
-        <p className='heading-text'>Course Details: {courseDetails}</p>
-      
+      <div style={{display: 'flex', background: 'linear-gradient(#0064b5, #2596be)', flexDirection:'row',textAlign: 'left', padding: '0px 20px 20px 20px', marginBottom: '30px'}}>
+        <div>
+          <h1 style={{color: 'white'}} className="heading">{courseID} {courseName} {courseUnits}</h1>
+          <p className='heading-text'>Course Description: {courseDescription} </p>
+          <p className='heading-text'>Course Details: {courseDetails}</p>
+        </div >
+        <div style={{width: '20vw', height: '30vh',  backgroundImage: `url(${Cow})`, marginRight: '5%',
+    backgroundPosition: 'bottom', 
+    backgroundRepeat: 'no-repeat', 
+    backgroundSize: '100% auto',}}>
+
+        </div>
       </div>
+      <div style={{color: "black"}}></div>
       <div className="course-info">
       </div>
       <div className="course-info">
