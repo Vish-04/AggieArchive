@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Aloja-Light';
+    src: url('../assets/Aloja-Light.woff');
+}
+
+.logoText {
+    font-family: 'Aloja-Light';
+}

@@ -103,12 +103,12 @@ function Popup(props) {
   return props.trigger ? (
     <div className="popup">
       <div className="popup-inner">
-        <h2>Add Resource</h2>
+        <h2 style={{color: '#2596be', fontSize: '28px'}}>Add Resource</h2>
         <button className="close-btn" onClick={() => props.setTrigger(false)}>
           Close
         </button>
         <form>
-          <div>
+          <div style={{}}>
             <input
               type="radio"
               id="urlOption"
@@ -119,7 +119,7 @@ function Popup(props) {
             />
             <label htmlFor="urlOption">URL</label>
           </div>
-          <div>
+          <div className='file-input'>
             <input
               type="radio"
               id="fileOption"
@@ -190,7 +190,7 @@ function Popup(props) {
             </p>
           ) : null}
 
-          <button onClick={handleSubmit}>Submit</button>
+          <button className='submit-btn' onClick={handleSubmit}>Submit</button>
         </div>
         {props.children}
       </div>
