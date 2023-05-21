@@ -1,6 +1,5 @@
 import React from "react";
 import Resource from "./resource";
-import axios from "axios";
 
 const ResourceList = ({resources}) =>{
    

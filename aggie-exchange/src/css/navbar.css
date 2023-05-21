@@ -4,7 +4,7 @@
   }
 
 .nav {
-    background-color: transparent;
+    background-color: white;
     color: black;
     display: flex;
     justify-content: space-between;
@@ -87,11 +87,3 @@
     border-color: white;
     border-radius: 20px;
 }
-
-/* .nav li.active {
-    background-color: #555;
-}
-
-.nav li:hover {
-    background-color: #777;
-} */

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "../css/loginForm.css";
 import { Link } from 'react-router-dom';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { createUser } from "./login";
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import LoginArtwork from '../imgs/Login-Artwork.jpg'
 
 
 const SignupForm = () => {
@@ -78,6 +79,10 @@ const styles = {
   container:{
     width:'100vw', 
     height:"100vh", 
+    backgroundImage: `url(${LoginArtwork})`, 
+    backgroundPosition: 'center', 
+    backgroundRepeat: 'no-repeat', 
+    backgroundSize: '100% auto'
   },
   back:{
     position: 'absolute',

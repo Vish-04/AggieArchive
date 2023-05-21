@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../css/classLanding.css';
 import Popup from './resourcepopup'; // Import the Popup component
 import Navbar from '../Navbar/navbar';
-import ResourceList from '../resourceList';
+import ResourceList from './resourceList';
 
 
 const ClassLandingPage = () => {
@@ -65,12 +65,15 @@ const ClassLandingPage = () => {
   return (
     <div className="container">
       <Navbar />
-      <h1 className="heading">{courseID} {courseName} {courseUnits}</h1>
-      <div className="course-info">
-        <p>Course Description: {courseDescription}</p>
+      <div style={{textAlign: 'left', backgroundColor: 'aliceblue', marginTop: '100px', padding: '20px'}}>
+        <h1 className="heading">{courseID} {courseName} {courseUnits}</h1>
+        <p className='heading-text'>Course Description: {courseDescription}</p>
+        <p className='heading-text'>Course Details: {courseDetails}</p>
+      
       </div>
       <div className="course-info">
-        <p>Course Details: {courseDetails}</p>
+      </div>
+      <div className="course-info">
       </div>
       {resources? <ResourceList resources={resources} /> : <h3>There are no resources. Want to add one?</h3>}
       <button className="add-resource-button" onClick={() => setButtonPopup(!buttonPopup)}>

@@ -1,9 +1,21 @@
+/* *{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "CustomFont";
+} */
+
+/* @font-face {
+    font-family: "CustomFont";
+} */
+
 .page {
+    /* height: 85%; */
+    /* width: 100%; */
     top: 50%;
     right: 50%;
     display: flex;
     justify-content: center;
-    align-self: center;
+    align-items: center;
     position: fixed;
 }
 
@@ -20,7 +32,30 @@
     justify-content: center;
 }
 
+.alt-login {
+    width: 80%;
+    height: 3em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.alt-login div {
+    width: 45%;
+    height: 90%;
+    border-radius: 0.25em;
+    background-color: black;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/* .google {background-image: url("../icons/google.png");}
+.facebook {background-image: url("../icons/facebook.png");} */
+
 .login-input {
+    /* border-bottom:2px solid black; */
+    
     background-color: rgba(229, 226, 226, 0.2);
     height: 4em;
     width: 80%;
@@ -30,7 +65,11 @@
     margin-top: 10px;
     margin-bottom: 10px;
     outline: none;
+}
 
+.login-input:focus {
+    background-color: rgba(32, 177, 255, 0.2);
+    outline-color: rgb(32, 177, 255);
 }
 
 .login-btn {
@@ -45,3 +84,54 @@
     cursor: pointer;
 }
 
+.login-btn:hover {
+    /* transform: scale(1.2); */
+    background-color: rgb(89, 191, 247);
+}
+
+.text {
+    position: relative;
+    bottom: -2em;
+}
+
+.hide {display: none;}
+
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30em;
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25em;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    transform: scale(1);
+    transform: 0.5s;
+}
+
+.back-btn {
+    width: 6em;
+    height: 2.5em;
+    background-color: rgb(32, 177, 255);
+    color: white;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 1em;
+    text-align: center;
+    text-decoration: none;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  .back-btn:hover {
+    background-color: rgb(22, 147, 215);
+  }
