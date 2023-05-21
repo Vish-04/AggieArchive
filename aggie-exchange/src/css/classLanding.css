@@ -110,6 +110,7 @@
 
 .add-resource-button:hover {
   border-radius: 10px;
+  background-color: #2183a6;
 }
 
 .add-post {
@@ -122,6 +123,7 @@
 }
 
 .add-post:hover {
+  background-color: #2183a6;
   border-radius: 5px;
   cursor: pointer;
 }
