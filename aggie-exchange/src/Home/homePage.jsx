@@ -18,6 +18,7 @@ const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
+  const sessionObject = localStorage.getItem('sessionObject');
 
   const handleSearch = (event) => {
     const query = event.target.value;
@@ -52,10 +53,19 @@ const HomePage = () => {
     return (
         <>
             {/* <Navbar /> */}
-            <div style={styles.loginButtons}>
+            
+              {sessionObject != null ?
+              <div style={styles.loginButtons}>
               <Link style={{textDecoration:'none'}} to="/login"><div className='loginbutton'>Login</div></Link>
-              <Link style={{textDecoration:'none'}} to="/signup"><div className='signupbutton'>Signup</div></Link>
-            </div>
+                <Link style={{textDecoration:'none'}} to="/signup"><div className='signupbutton'>Signup</div></Link>
+              </div>
+               :
+               <div style={styles.loginButtons}>
+               <Link style={{textDecoration:'none'}} to="/profile"><div className='signupbutton'>Profile</div></Link>
+               </div>
+               }
+
+            
             {/* Search Function */}
             <div style={styles.homeHeader}>
               <div>

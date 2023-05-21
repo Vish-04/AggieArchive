@@ -6,12 +6,17 @@ import Navbar from '../Navbar/navbar';
 import ResourceList from './resourceList';
 import Cow from "../imgs/Cow.png"
 import Footer from "../Footer/footer"
+import DiscussionList from './discussionList';
 
 
 const ClassLandingPage = () => {
   const [course, setCourse] = useState(null);
   const [resources, setResources] = useState([]);
+  const [discussions, setDiscussions] = useState([]);
   const [buttonPopup, setButtonPopup] = useState(false);
+  const [descriptionValue, setDescriptionValue] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   useEffect(() => {
 
@@ -41,9 +46,58 @@ const ClassLandingPage = () => {
       }
     }
 
+    const fetchDiscussion = async () => {
+      try{
+        const url = window.location.href.split("/");
+        const courseId = url[url.length - 1];
+        const response = await axios.get("http://localhost:3000/discussions/course/" + courseId);
+        setDiscussions(response.data);
+
+      } catch(error){
+        console.log(error);
+      }
+    }
+
     fetchCourse();
     fetchResources();
+    fetchDiscussion();
   }, []);
+
+  const handleCreatePost = async () =>{
+    const url = window.location.href.split("/");
+    const courseId = url[url.length - 1];
+    var sessionObject = sessionStorage.getItem('sessionObject');
+    if(!sessionObject){
+      setError("Log In to Post");
+      setSuccess(false);
+    } else{
+
+      if (!descriptionValue.trim()){
+        setError('Post content cannot be empty');
+      } else{
+        try{
+          console.log("USERNAME: ", sessionObject.userInfo.username)
+          console.log("COURSE_ID:", courseId);
+          console.log("CONTENT: ", descriptionValue)
+
+          const Discussion = {
+            username: sessionObject.userInfo.username,
+            content: descriptionValue,
+            course_id: courseId,
+          }
+          response = await axios.post("http://localhost:3000/discussions/add", Discussion);
+          setSuccess(true);
+          setError('');
+
+          // location.reload();
+
+      } catch(e){
+        setError(e);
+        setSuccess(false)
+      }
+      }
+    }
+  }
 
 
 
@@ -86,6 +140,26 @@ const ClassLandingPage = () => {
       <div className="course-info">
       </div>
       {resources? <ResourceList resources={resources} /> : <h3>There are no resources. Want to add one?</h3>}
+      {discussions? <DiscussionList discussions={discussions} /> : <h3>There are no discussions. Want to add one?</h3>}
+      <textarea
+            value={descriptionValue}
+            className="popup-input"
+            onChange={(event) => {
+              setDescriptionValue(event.target.value);
+            }}
+            placeholder="Enter post"
+          />
+          {error ? (
+            <p style={{ color: 'red', fontSize: 16, textAlign: 'center' }}>
+              {error}
+            </p>
+          ) : null}
+          {success ? (
+            <p style={{ color: 'green', fontSize: 16, textAlign: 'center' }}>
+              Added Post Successfully!
+            </p>
+          ) : null}
+          <button onClick={handleCreatePost}>POST</button>
       <button className="add-resource-button" onClick={() => setButtonPopup(!buttonPopup)}>
         Add Resource 
       </button>

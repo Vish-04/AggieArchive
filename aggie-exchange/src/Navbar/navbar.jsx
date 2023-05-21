@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/navBar.css"
+import "../css/searchBar.css"
 import { Link } from "react-router-dom";
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 const Navbar = () => {
   const sessionObject = JSON.parse(sessionStorage.getItem("sessionObject"));
@@ -14,28 +14,34 @@ const Navbar = () => {
   }
 
   return (
+    <>
     <nav
       className="nav"
     >
-      <a href="/" className="site-title">AggieArchive</a>
-      <ul>
-        <li>
-          <Link className="home-button" to="/">Home</Link>
-        </li>
-        {!sessionObject ? (
-          <li>
-            <Link className="login-button" to="/login">Login</Link>
-          </li>
-        ) : (
-          <li>
-            <Link className="profile-button" to="/profile">
-              <AccountBoxIcon/>
-            </Link>
-          </li>
-        )}
-      </ul>
+      <a href="/" className="site-title"><h4 style={{margin:'15px'}}>AggieArchive</h4></a>
     </nav>
+    {!sessionObject ? (
+      <div style={styles.loginButtons}>
+        <Link className="loginbutton" to="/login">Login</Link>
+      </div>
+    ) : (
+      <div style={styles.loginButtons}>
+        <Link style={{textDecoration:'none'}} to="/profile"><div className='signupbutton'>Profile</div></Link>
+      </div>
+    )}
+    </>
   );
 }
 
 export default Navbar;
+
+const styles ={
+  loginButtons:{
+    position: 'absolute',
+    display: 'flex',
+    flexDirection: 'row',
+    right: 20,
+    top: 15,
+    zIndex: 2,  
+  },
+}

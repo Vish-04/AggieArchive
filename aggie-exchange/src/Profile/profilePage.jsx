@@ -56,8 +56,9 @@ const ProfilePage = () =>{
     
 
         return(
-        <div style={styles.container}>
+          <>
           <Navbar />
+        <div style={styles.container}>
         <h1 style={styles.title}>Welcome, {username}!</h1>
         
         <div style={styles.section}>
@@ -121,6 +122,7 @@ const ProfilePage = () =>{
           >Log Out</button>  
         </div>  
       </div>
+      </>
     );
 
 
@@ -150,7 +152,7 @@ const styles = {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
+      // justifyContent: 'center',
       height: '100vh',
       width: '100vw',
       backgroundColor: '#f1f1f1',
@@ -172,6 +174,7 @@ const styles = {
       fontSize: '32px',
       fontWeight: 'bold',
       marginBottom: '20px',
+      color: 'white'
     },
     sectionTitle: {
       fontSize: '24px',

@@ -9,6 +9,7 @@ const ResourceList = ({resources}) =>{
 
         console.log("RESOURCE NAME", )
         return(
+        <>
             <div className="flex-container">
                 {resources.map(resource =>(
                             <Resource
@@ -21,6 +22,8 @@ const ResourceList = ({resources}) =>{
                             id = {resource._id}
                             />))}
             </div>
+            <hr style={{width: '80%', margin: '10px'}}/>
+        </>
         );
     } else{
         return(<>

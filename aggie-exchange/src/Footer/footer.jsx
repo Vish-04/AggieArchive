@@ -27,7 +27,7 @@ const styles = {
     color: '#fff',
     width: '100%',
     padding: 10,
-    zIndex: 1,
+    // zIndex: 1,
   }
 
 }
