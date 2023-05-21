@@ -16,12 +16,14 @@
     width: 100%;
     max-width: 640px;
     background-color: white;
+    border-radius: 10px;
 }
 
 .popup-inner .close-btn {
     position: absolute;
     top: 16px;
     right: 16px;
+    cursor: pointer;
 }
 .popup-inner .add-file {
     bottom: 16px;
@@ -38,4 +40,31 @@
     margin-top: 10px;
     margin-bottom: 10px;
     outline: none;
+}
+
+.close-btn {
+    background-color: #2596be;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+.close-btn:hover {
+    background-color: #2183a6;
+    cursor: pointer;
+}
+
+.submit-btn {
+    background-color: #2596be;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #2183a6;
+    cursor: pointer;
 }
