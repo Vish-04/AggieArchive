@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { Link } from 'react-router-dom';
 import "../css/loginForm.css";
+import { authenticateLogin } from "./login";
+
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -9,9 +11,15 @@ const LoginForm = () => {
   const [error, setError] = useState({ value: false, message: "" });
   const [success, setSuccess] = useState(false);
 
-  const handleLogIn = async () => {
-    console.log("IN")
-  };
+  const handleLogIn = async() =>{
+    const result = await authenticateLogin(username, password)
+    setError(result)
+    if (!result.value){
+        sessionStorage.setItem("logIn", "true");
+        setSuccess(true)
+        window.location.href = "/"
+    }
+}
 
   return (
     <div style={styles.container}>
