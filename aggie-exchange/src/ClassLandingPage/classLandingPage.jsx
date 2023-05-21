@@ -66,7 +66,8 @@ const ClassLandingPage = () => {
   const handleCreatePost = async () =>{
     const url = window.location.href.split("/");
     const courseId = url[url.length - 1];
-    var sessionObject = sessionStorage.getItem('sessionObject');
+    const sessionObject = sessionStorage.getItem('sessionObject');
+    console.log("SESSION OBJECT IN HANDLE THING: ", sessionObject)
     if(!sessionObject){
       setError("Log In to Post");
       setSuccess(false);
@@ -76,23 +77,24 @@ const ClassLandingPage = () => {
         setError('Post content cannot be empty');
       } else{
         try{
-          console.log("USERNAME: ", sessionObject.userInfo.username)
+          console.log("USERNAME IN HERE: ")
           console.log("COURSE_ID:", courseId);
           console.log("CONTENT: ", descriptionValue)
 
           const Discussion = {
-            username: sessionObject.userInfo.username,
+            username: "anon",
             content: descriptionValue,
             course_id: courseId,
           }
-          response = await axios.post("http://localhost:3000/discussions/add", Discussion);
+          const response = await axios.post("http://localhost:3000/discussions/add", Discussion);
+          console.log("RESPONSE", response.data)
           setSuccess(true);
           setError('');
 
           // location.reload();
 
       } catch(e){
-        setError(e);
+        setError(e.message);
         setSuccess(false)
       }
       }

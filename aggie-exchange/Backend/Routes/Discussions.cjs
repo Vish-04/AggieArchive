@@ -25,7 +25,7 @@ router.route("/add").post((req, res) =>{
 
 
 // fetches discussion by course_id
-router.route("/discussion/:course_id").get((req, res) => {
+router.route("/course/:course_id").get((req, res) => {
     const course_id = req.params.course_id;
   
     Discussion.find({ course_id: course_id })
