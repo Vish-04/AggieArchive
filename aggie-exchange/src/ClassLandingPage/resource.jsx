@@ -66,16 +66,21 @@ const Resource = ({urlName, urlValue, description, up, down, id}) => {
 
     return(
         <div style={{ display: 'flex', flexDirection: 'row', width: '100%', gap: 5, justifyContent: 'center' }}>
-            <div className="flex-item">{urlName} {urlValue} <p>{description}</p></div>
-            <div style={{ display: 'flex', flexDirection: 'row', gap: 3, alignContent: "center", textAlign:'center'}}>
-            <div style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent:"center"}}>
-                <div onClick={handleUpvote}><ArrowCircleUpIcon className="vote" style={{fontSize: '3rem'}} /></div>
-                <h3>{upvoteNumber}</h3>
-            </div>
-            <div style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent:"center"}}>
-                <div onClick={handleDownvote}><ArrowCircleDownIcon className="vote" style={{fontSize: '3rem'}} /></div>
-                <h3>{downvoteNumber}</h3>
-            </div>
+            <div className="flex-item">
+                <div>
+                    <a href= {urlValue}><b>{urlName}</b></a>
+                    <p>{description}</p>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'row', gap: 3, alignContent: "center", justifyContent:'right', textAlign:'center'}}>
+                    <div style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent:"center"}}>
+                        <div onClick={handleUpvote}><ArrowCircleUpIcon className="vote" style={{fontSize: '3rem'}} /></div>
+                        <h3>{upvoteNumber}</h3>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent:"center"}}>
+                        <div onClick={handleDownvote}><ArrowCircleDownIcon className="vote" style={{fontSize: '3rem'}} /></div>
+                        <h3>{downvoteNumber}</h3>
+                    </div>
+                </div>
             </div>
         </div>
     );
