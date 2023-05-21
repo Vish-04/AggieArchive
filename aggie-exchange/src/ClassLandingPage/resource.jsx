@@ -67,9 +67,9 @@ const Resource = ({urlName, urlValue, description, up, down, id}) => {
     return(
         <div style={{ display: 'flex', flexDirection: 'row', width: '100%', gap: 5, justifyContent: 'center' }}>
             <div className="flex-item">
-                <div>
-                    <a href= {urlValue}><b>{urlName}</b></a>
-                    <p>{description}</p>
+                <div style={{fontSize: '26px'}}>
+                    <a style={{color: '#0060ac'}} href= {urlValue}><b>{urlName}</b></a>
+                    <p style={{fontSize: '18px'}}>{description}</p>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', gap: 3, alignContent: "center", justifyContent:'right', textAlign:'center'}}>
                     <div style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent:"center"}}>
