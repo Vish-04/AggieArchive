@@ -4,6 +4,7 @@ import './App.css'
 import {RecoilRoot} from "recoil";
 import LoginForm from "./Login/loginForm"
 import SignupForm from "./Login/signupForm";
+import ClassLandingPage from './ClassLandingPage/classLandingPage';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="login"  element={<LoginForm />} />
           <Route path="signup" element={<SignupForm />} />
+          <Route path="classLanding" element={<ClassLandingPage />} />
         </Routes>
       </Router>
     </RecoilRoot>
