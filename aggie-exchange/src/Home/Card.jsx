@@ -12,12 +12,10 @@ const Card = ({ course_id, course_name}) => {
   }
   
   return (
-    // <Link style={{ textDecoration: 'none', color: 'black'}} to={"/class/"+objectId}>
     <div className="card" onClick={handleCardRender}>
         <h3 className='card-text'>{course_id}</h3>
         <p className='card-text'>{course_name}</p>
     </div>
-    // </Link>
   );
 }
 

@@ -23,15 +23,11 @@ const styles = {
   footerStyle:{
     justifySelf: 'flex-end',
     alignSelf: 'flex-end',
-    backgroundColor: '#333',
+    backgroundColor: 'black',
     color: '#fff',
     width: '100%',
-    padding: 20,
+    padding: 10,
     zIndex: 1,
-    backgroundImage: `url(${FooterImage})`, 
-    backgroundPosition: 'center', 
-    backgroundRepeat: 'repeat', 
-    backgroundSize: 'contain',
   }
 
 }

@@ -28,7 +28,7 @@
 
   .card {
     border: 1px solid #000000;
-    background-color: rgb(123, 212, 128);
+    background-color: #0060ac;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
@@ -43,11 +43,12 @@
   }
   
   .card:hover {
-    background-color: rgb(164, 220, 168);
+    background-color: #2596be;;
     box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
     transition: ease-out 0.2s;
     border-radius: 20px;
     cursor: pointer;
+    transform: translateY(-10px);
   }
   
   
