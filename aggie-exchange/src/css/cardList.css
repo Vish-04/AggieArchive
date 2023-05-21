@@ -10,14 +10,14 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10%;
+    /* gap: 10%; */
   }
   
   .card-list-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    /* width: 80%; */
   }
   
   .card-text{
@@ -28,7 +28,7 @@
 
   .card {
     border: 1px solid #000000;
-    background-color: rgb(239, 237, 237);
+    background-color: rgb(123, 212, 128);
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
@@ -43,7 +43,7 @@
   }
   
   .card:hover {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(164, 220, 168);
     box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
     transition: ease-out 0.2s;
     border-radius: 20px;

@@ -17,15 +17,15 @@
     width: 50%;
     border-radius: 0.25em;
     text-align: left;
-    padding: 2em;
+    padding: 0 0 0 2em;
     margin-top: 10px;
     margin-bottom: 10px;
     outline: none;
-    background-color: #bf9b30;
+    background-color: rgba(255,255,255,0.3);
     color: white;
     border: 0;
     border-radius: 25px;
-    font-size: 16px;
+    font-size: 18px;
     transition: ease-in-out 0.3s;
 }
 
@@ -40,4 +40,25 @@
 
 .searchIcon svg {
     font-size: 35px;
+}
+
+.loginbutton, .signupbutton{
+    padding: 10px;
+    border-style: solid;
+    border-color: white;
+    font-size: 18px;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: ease-in-out 0.2s;
+}
+
+.loginbutton:hover, .signupbutton:hover {
+    border-radius: 20px;
+}
+
+.signupbutton{
+    color: #0060ac;
+    background-color: white;
 }

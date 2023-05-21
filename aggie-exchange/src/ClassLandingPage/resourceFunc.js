@@ -46,23 +46,27 @@ try{
 
 export const addFile = async (fileName, fileValue, description, course_id) =>{
 
+    fileValue = fileValue.replace("C:\\fakepath\\", "");
+    console.log("FILENAME: ", fileName);
+    console.log("FILEVALUE: ", fileValue);
+
     var sessionObject = JSON.parse(sessionStorage.getItem("sessionObject"));
     if (!sessionObject){
         return {value: true, message: "Please log in to post resource"}
     }
     if(!fileName.trim()){
-        return {value:true, message: "URL name is empty"}
+        return {value:true, message: "File name is empty"}
     }
 
     if(!fileValue.trim()){
-        return {value:true, message: "URL is empty"}
+        return {value:true, message: "No file detected"}
     }
 
 try{
 
     const Resource = {
         resource_name: fileName,
-        resource: fileValue,
+        resource: course_id + fileValue,
         up: [sessionObject.userInfo.username],
         down: [""],
         course_id: course_id,

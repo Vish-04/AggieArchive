@@ -40,6 +40,7 @@ function Popup(props) {
         setSuccess(false);
       }
     } else{
+      console.log("USER SET FILE NAME", name);
       console.log("FILE NAME:", fileName);
       console.log("FILE PATH:", filePath);
       console.log('Description Value:', descriptionValue);
@@ -48,48 +49,44 @@ function Popup(props) {
       const extension = fileName.substring(fileName.length - 4)
       console.log("EXTENSION", extension);
 
-      // const result = await addFile(
-      //   fileName,
-      //   filePath,
-      //   descriptionValue,
-      //   courseId
-      // )
+      const result = await addFile(
+        name,
+        fileName,
+        descriptionValue,
+        courseId
+      )
 
-      // setError(result);
-      // console.log(result);
-
-
-      const data = new FormData();
-      data.set("name", name);
-      data.set("course_id", courseId);
-      data.set("extension", extension);
-      data.set("file", filePath);
-
-      // await axios.post("https://httpbin.org/anything", data).then((res)=>{console.log(res)}).catch(err=>console.log(err));
-      console.log("NOT PAST")
-
-      try{
-        const response = await fetch('http://localhost:3000/resources/upload',{
-            method: "POST",
-            body: data
-        })
-        console.log(response)
-
-      } catch(e){
-        console.log(e);
-      }
-      // await axios.post("http://localhost:3000/resources/upload", data);
+      setError(result);
+      console.log(result);
 
       console.log("PAST")
       
-      // if (!result.value) {
-      //   setSuccess(true);
+      if (!result.value) {
+        const data = new FormData();
+        data.set("name", name);
+        data.set("course_id", courseId);
+        data.set("extension", extension);
+        data.set("file", filePath);
+        console.log("NOT PAST")
+        
+        try{
+          const response = await fetch('http://localhost:3000/resources/upload',{
+            method: "POST",
+            body: data
+          })
+          console.log(response)
+          setSuccess(true);
 
-      //   props.setTrigger(false);
-      //   location.reload();
-      // } else {
-      //   setSuccess(false);
-      // }
+        } catch(e){
+          setSuccess(false)
+          console.log(e);
+          setError(e);
+        }
+        props.setTrigger(false);
+        location.reload();
+      } else {
+        setSuccess(false);
+      }
 
     }
   };

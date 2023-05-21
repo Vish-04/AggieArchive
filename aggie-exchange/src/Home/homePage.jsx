@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 import Fuse from 'fuse.js';
 import CardList from './cardResult';
-import Navbar from "../Navbar/navbar"
+import { Link } from 'react-router-dom';
+// import Navbar from "../Navbar/navbar"
 import Footer from '../Footer/footer';
 import coursesData from "../../Backend/Web Scraper/data/course.json"
 import '../css/searchBar.css';
 import StudySmart from '../imgs/Study-Smart.png'
 import DownloadResource from '../imgs/Download-Resources.png'
 import ExploreClasses from "../imgs/Explore-Classes.png";
-import HomeHeader from "../imgs/Home-Header4.png";
+import HomeHeader from "../imgs/Home-Header.jpg";
+import '../assets/Aloja-Light.otf';
 
 const HomePage = () => {
 
@@ -36,8 +38,8 @@ const HomePage = () => {
     const fuzzyResults = fuse.search(query);
     
     const filteredResults = fuzzyResults.map((result) => result.item);
-    if (filteredResults.length >= 8){
-      const limitedFilterResults = filteredResults.slice(0,6);
+    if (filteredResults.length >= 7){
+      const limitedFilterResults = filteredResults.slice(0,5);
       setSearchResults(limitedFilterResults);
     }else{
       setSearchResults(filteredResults);
@@ -49,11 +51,14 @@ const HomePage = () => {
     return (
         <>
             {/* <Navbar /> */}
-            
+            <div style={styles.loginButtons}>
+              <Link style={{textDecoration:'none'}} to="/login"><div className='loginbutton'>Login</div></Link>
+              <Link style={{textDecoration:'none'}} to="/signup"><div className='signupbutton'>Signup</div></Link>
+            </div>
             {/* Search Function */}
             <div style={styles.homeHeader}>
               <div>
-              <div style={styles.logo}></div>
+              <div style={styles.logo}><p style={styles.logoText}>AGGIE ARCHIVE</p></div>
               <div className= "search">
                 <div className="searchInputs">
                   <input 
@@ -72,7 +77,7 @@ const HomePage = () => {
             <div style={{display: 'flex', flexDirection:'row', width: '80%', height: 'auto', justifyContent: 'center', backgroundColor: 'transparent'}}>
               <div>
                 <div style={{backgroundImage: `url(${ExploreClasses})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', width:'35vw', height:'50vh', backgroundColor: 'transparent'}}></div>
-                <h1 style={{textAlign: 'center'}}>STUDY SMART</h1>
+                <h1 style={{textAlign: 'center'}}>EXPLORE CLASSES</h1>
               </div>
               <div>
                 <div style={{backgroundImage: `url(${DownloadResource})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', width:'35vw', height:'50vh', backgroundColor: 'transparent'}}></div>
@@ -95,12 +100,24 @@ const HomePage = () => {
 export default HomePage;
 
 const styles ={
+  loginButtons:{
+    position: 'absolute',
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 20,
+    right: 30,
+    top: 30
+  },
   homeHeader:{
     height: "80vh",
     width: "100vw",
+    backgroundImage: `url(${HomeHeader})`,
+    backgroundPosition: 'center', 
+    backgroundSize: '100% auto',
+    backgroundRepeat: 'no-repeat',
      
     // opacity: '0.8',
-    backgroundColor: '#880808',
+    // backgroundColor: '#880808',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -110,11 +127,16 @@ const styles ={
     // backgroundPosition: 'center', 
     // backgroundRepeat: 'no-repeat', 
     // backgroundColor: 'rgba(128, 128, 128, 0.2)',
-    backgroundImage: `url(${HomeHeader})`,
-    backgroundPosition: 'center', 
-    backgroundSize: '100% auto',
-    backgroundRepeat: 'no-repeat',
     width: '100vw',
-    height: '60vh'
+    // height: '60vh',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignContent: 'center'
+  },
+  logoText:{
+    fontSize: 128,
+    fontFamily: 'Light',
+    color: 'white',
+    margin: 0
   }
 }
