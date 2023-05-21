@@ -10,7 +10,8 @@ import StudySmart from '../imgs/Study-Smart.png'
 import DownloadResource from '../imgs/Download-Resources.png'
 import ExploreClasses from "../imgs/Explore-Classes.png";
 import HomeHeader from "../imgs/Home-Header.jpg";
-import '../assets/Aloja-Light.otf';
+import '../assets/Aloja-Light.woff';
+import '../css/home.css'
 
 const HomePage = () => {
 
@@ -58,7 +59,9 @@ const HomePage = () => {
             {/* Search Function */}
             <div style={styles.homeHeader}>
               <div>
-              <div style={styles.logo}><p style={styles.logoText}>AGGIE ARCHIVE</p></div>
+              <div className= "logoText"> 
+                <div style={styles.logo}><p style={styles.logoText}>AGGIE ARCHIVE</p></div>
+              </div>
               <div className= "search">
                 <div className="searchInputs">
                   <input 
@@ -135,8 +138,8 @@ const styles ={
   },
   logoText:{
     fontSize: 128,
-    fontFamily: 'Light',
     color: 'white',
-    margin: 0
+    margin: 0,
   }
+
 }
